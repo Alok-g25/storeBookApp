@@ -15,7 +15,7 @@ function Card({ item }) {
             </h2>
             <p>{item.title}</p>
             <div className="card-actions flex justify-between items-center">
-              <div className="badge badge-outline">${item.price}</div>
+              <div className="text-green-700 font-bold py-1 px-2">${item.price}</div>
               <div className="px-2 py-1 border-[1px] border-gray-700 rounded-full cursor-pointer hover:bg-pink-500 hover:text-white duration-700">
                 Buy now
               </div>

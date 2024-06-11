@@ -1,0 +1,27 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "MERN full Stack",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alok-g25/storeBookApp.git"
+  },
+  "author": "Alok kumar gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alok-g25/storeBookApp/issues"
+  },
+  "homepage": "https://github.com/Alok-g25/storeBookApp#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  }
+}

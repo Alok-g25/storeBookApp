@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth } from "./context/AuthProvider";
+
 
 function Navbar() {
   const [sticky, setSticky] = useState(false);
   const [theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
   const element=document.documentElement;
+  const [authUser,setAuthUser]=useAuth()
+
   useEffect(()=>{
     if(theme==="dark"){
       element.classList.add("dark")
@@ -56,7 +61,7 @@ function Navbar() {
         className={`max-w-screen-2xl mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50
       ${
         sticky
-          ? "sticky-navbar shadow-md bg-base-300 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-out"
+          ? "sticky-navbar shadow-md bg-base-300 dark:bg-slate-800 dark:text-white duration-300 transition-all ease-out"
           : ""
       } `}
       >
@@ -148,12 +153,15 @@ function Navbar() {
                 </svg>
               </label>
             </div>
-            <div>
+            {
+              authUser?<Logout />:
+              <div>
               <Link onClick={()=>document.getElementById('my_modal_3').showModal()} className="font-semibold text-black border hover:bg-black hover:text-white px-3 py-2 rounded-lg cursor-pointer duration-300 dark:text-white">
                 Login
               </Link>
               <Login />
             </div>
+            }
           </div>
         </div>
       </div>

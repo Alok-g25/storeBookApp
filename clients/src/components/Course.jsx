@@ -1,10 +1,24 @@
-import React from 'react'
-import list from "../../public/list.json"
+import React, { useEffect, useState } from 'react'
 import Card from "./Card"
 import { Link } from 'react-router-dom'
+import axios from "axios"
 
 function Course() {
-    // console.log(list)
+    const [books,setBooks]=useState([])
+
+    useEffect(()=>{
+        const getData=async ()=>{
+            try {
+                const item= await axios.get("http://localhost:8000/books")
+                console.log(item.data)
+                setBooks(item.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getData()
+    },[])
+    
   return (
     <>
         <div className='mmax-w-screen-2xl container mx-auto md:px-20 px-4'>
@@ -16,7 +30,7 @@ function Course() {
 
             <div className='mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                 {
-                    list.map((item,index)=>{
+                    books.map((item,index)=>{
                         return(<Card key={index} item={item}/>)
                     })
                 }
