@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import bookRoute from "./routes/book.routes.js"
 import userRoute from "./routes/user.routes.js"
+import contactRoute from "./routes/contact.routes.js"
 import cors from "cors"
 
 dotenv.config()
@@ -31,6 +32,7 @@ dbConnected();
 // define routes
 app.use("/books",bookRoute)
 app.use("/user",userRoute)
+app.use("/contact",contactRoute)
 
 app.listen(port,()=>{
     console.log(`server is running on port http://localhost:${port}`)

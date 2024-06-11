@@ -102,7 +102,7 @@ function Navbar() {
               <ul className="menu  menu-horizontal px-1">{navItem}</ul>
             </div>
             <div className="hidden md:block">
-              <label className="py-1 border border-base-300 px-3 rounded-lg flex items-center gap-2">
+              <label className="py-1 border-[2px] border-gray-200 px-3 rounded-lg flex items-center gap-2">
                 <input
                   type="text"
                   className="grow outline-none bg-inherit"

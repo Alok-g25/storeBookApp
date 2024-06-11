@@ -1,9 +1,16 @@
 import React from 'react'
+import Navbar from "./Navbar"
+import Contact from './Contact'
+import Footer from "./Footer"
+import Banner from "./Banner"
 
 function ContactPage() {
   return (
     <>
-        <div className='min-h-screen'> contact</div>
+      <Navbar />
+      <Banner />
+      <Contact />
+      <Footer />
     </>
   )
 }
